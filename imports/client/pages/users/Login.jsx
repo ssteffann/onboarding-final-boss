@@ -5,10 +5,6 @@ import SimpleSchema from 'simpl-schema';
 class Login extends React.Component {
     constructor() {
         super();
-
-        this.state = {
-            error: null
-        }
     }
 
     onSubmit = (data) => {
@@ -16,9 +12,9 @@ class Login extends React.Component {
 
         Meteor.loginWithPassword(email, password, (err) => {
             if (!err) {
-                FlowRouter.go('donuts.list');
+                FlowRouter.go('donuts');
             } else {
-                this.setState({error: err.reason});
+                alert(err.reason);
             }
         });
     };
@@ -27,22 +23,15 @@ class Login extends React.Component {
         return (
             <main className="cc-main">
                 <AutoForm schema={LoginSchema} onSubmit={this.onSubmit}>
-                    {this.state.error &&
-                    <div className="error">{this.state.error}</div>
-                    }
-                    <div className="cc-form__row">
-                        <AutoField name="email"/>
-                        <ErrorField name="email"/>
-                    </div>
-                    <div className="cc-form__row">
-                        <AutoField name="password" type="password"/>
-                        <ErrorField name="password"/>
-                    </div>
-                    <div className="cc-form__row-submit">
-                        <button type="submit" className="cc-button cc-button--bg-main">
-                            Login
-                        </button>
-                    </div>
+                    <AutoField name="email"/>
+                    <ErrorField name="email"/>
+
+                    <AutoField name="password" type="password"/>
+                    <ErrorField name="password"/>
+
+                    <button type="submit">
+                        Login
+                    </button>
                 </AutoForm>
             </main>
         )
