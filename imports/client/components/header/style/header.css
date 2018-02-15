@@ -1,0 +1,27 @@
+.header-container {
+    height: 50px;
+    background-color: #fca54d;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.4);
+}
+
+.header-wrapper {
+    width: 80%;
+    color: #ffffff;
+}
+
+.header-wrapper a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logo {
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.logo .trademark {
+    vertical-align: super;
+    font-size: 8px;
+    font-weight: normal;
+}
