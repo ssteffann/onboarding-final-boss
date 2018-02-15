@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.align-stretch {
+    align-items: stretch;
+}
+
+.align-baseline {
+    align-items: baseline;
+}
+
+.flex-no-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    flex: 1;
+}
+
+@media all and (max-width: 640px) {
+    /*.flex-container {*/
+        /*flex-direction: column;*/
+    /*}*/
+}
