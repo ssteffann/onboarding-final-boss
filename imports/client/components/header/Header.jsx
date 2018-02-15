@@ -5,7 +5,8 @@ const Header = ({ isLoggedIn }) => {
   return (<div className='flex-container header-container'>
     <div className='header-wrapper'>
       <div className='flex-container justify-space-between'>
-        <div className='logo'>donut <span className='trademark'>TM</span></div>
+        <div className='logo'><a href='/'>donut <span className='trademark'>TM</span></a></div>
+
         {isLoggedIn
           ? <div>Hello!</div>
           : <div>
