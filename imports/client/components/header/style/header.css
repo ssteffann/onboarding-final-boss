@@ -1,7 +1,9 @@
 .header-container {
+    position: relative;
     height: 50px;
-    background-color: #fca54d;
+    background-color: #fbaf5d;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.4);
+    z-index: 5;
 }
 
 .header-wrapper {

@@ -13,6 +13,7 @@
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
     "react-mounter": "^1.2.0",
+    "react-meteor-data": "^0.2.11",
     "simpl-schema": "^0.4.2",
     "uniforms": "^1.22.1",
     "uniforms-unstyled": "^1.22.1"

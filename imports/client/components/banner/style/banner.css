@@ -1,0 +1,15 @@
+.banner-container {
+    position: relative;
+    height: 100%;
+}
+
+.banner-info {
+    max-width: 400px;
+    position: absolute;
+    top: 45%;
+    left: 10%;
+}
+
+.banner-info .title {
+    color: #fbaf5d;
+}
