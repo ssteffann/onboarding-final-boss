@@ -1,7 +1,16 @@
-body {
+html, body {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f7f6f6;
+    height: 100%;
+}
+
+#react-root {
+    height: 100%;
+}
+
+main {
+    height: calc(100% - 50px);
 }
 
 .flex-container {
@@ -24,7 +33,11 @@ body {
     align-items: baseline;
 }
 
-.flex-no-wrap {
+.align-end {
+    align-items: flex-end;
+}
+
+.flex-wrap {
     flex-wrap: wrap;
 }
 
@@ -33,7 +46,7 @@ body {
 }
 
 @media all and (max-width: 640px) {
-    /*.flex-container {*/
-        /*flex-direction: column;*/
-    /*}*/
+    .flex-container {
+        flex-direction: column;
+    }
 }

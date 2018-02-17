@@ -1,0 +1,9 @@
+.info-card-container {
+    background-color: #ebebeb;
+    padding: 10px;
+}
+
+.info-card-container h2 {
+    color: #fbaf5d;
+    font-size: 18px;
+}

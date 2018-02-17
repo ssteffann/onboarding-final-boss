@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './style/header.css';
 
 const Header = ({ isLoggedIn }) => {
@@ -17,6 +18,10 @@ const Header = ({ isLoggedIn }) => {
       </div>
     </div>
   </div>);
+};
+
+Header.propsTypes = {
+  isLoggedIn: PropTypes.bool,
 };
 
 export default Header;

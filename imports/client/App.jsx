@@ -10,7 +10,6 @@ export default class App extends React.Component {
     render() {
         const {main, routeProps} = this.props;
         const headerProps = {
-          routeProps: routeProps,
           isLoggedIn: !!Meteor.userId(),
           key: 'header'
         };
