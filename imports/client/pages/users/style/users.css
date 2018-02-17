@@ -1,0 +1,27 @@
+.users-container {
+    height: 100%;
+}
+
+.users-form-wrapper {
+    width: 40%;
+}
+
+.users-form-wrapper .title {
+     color: #fbaf5d;
+     margin: 0 0 15px;
+ }
+
+.users-form-wrapper .btn-holder {
+    margin-top: 15px;
+}
+
+.users-form-wrapper .error {
+    color: #F24827;
+    padding: 0 0 10px 15px;
+}
+
+@media all and (max-width: 640px) {
+    .users-form-wrapper {
+        width: 80%;
+    }
+}
