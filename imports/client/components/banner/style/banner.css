@@ -10,6 +10,11 @@
     left: 10%;
 }
 
-.banner-info .title {
+.banner-info .title, .action-btn {
     color: #fbaf5d;
+}
+
+.banner-info .action-btn {
+    cursor: pointer;
+    display: inline-block;
 }

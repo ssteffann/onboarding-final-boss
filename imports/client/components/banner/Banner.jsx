@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import './style/banner.css';
 
 const Banner = ({ imgUrl, alt, title, text, clickAction }) => {
@@ -14,7 +15,7 @@ const Banner = ({ imgUrl, alt, title, text, clickAction }) => {
           <h1 className='title'>{title}</h1>
           <p>{text}</p>
         </div>
-        <button onClick={clickAction}>Arrow</button>
+        <div className='action-btn' onClick={clickAction}><FontAwesomeIcon icon='angle-down' size='3x' /></div>
       </div>
   </div>);
 };
