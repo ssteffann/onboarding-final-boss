@@ -1,8 +1,11 @@
+/*Initial setup*/
+
 html, body {
     margin: 0;
     padding: 0;
     background-color: #f7f6f6;
     height: 100%;
+    font-size: 16px;
 }
 
 #react-root {
@@ -12,6 +15,8 @@ html, body {
 main {
     height: calc(100% - 50px);
 }
+
+/*Flex*/
 
 .flex-container {
     display: flex;
@@ -37,12 +42,58 @@ main {
     align-items: flex-end;
 }
 
+.align-center {
+    align-items: center;
+}
+
 .flex-wrap {
     flex-wrap: wrap;
 }
 
 .flex-item {
     flex: 1;
+}
+
+/*Inputs*/
+
+input {
+    width: 100%;
+    background-color: #ebebeb;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+input::placeholder {
+    color: black;
+}
+
+/*Buttons*/
+
+.btn {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-blue {
+    background-color: #00bff3;
+}
+
+.btn-pink {
+    background-color: #f26d7d;
 }
 
 @media all and (max-width: 640px) {
