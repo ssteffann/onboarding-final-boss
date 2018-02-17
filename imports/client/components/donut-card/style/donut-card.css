@@ -1,0 +1,38 @@
+.donut-card-container {
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 30px 15px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.donut-card-container .donut-img, .price {
+    padding: 0 15px;
+}
+
+.donut-card-container .edit, .delete {
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.donut-card-container img {
+     max-width: 70px;
+ }
+
+.donut-card-container .time {
+    font-size: 12px;
+    color: #b1b1b1;
+}
+
+.donut-card-container .donut-info {
+    flex-grow: 2;
+}
+
+.donut-card-container .price, .edit {
+    color: #00bff3;
+}
+
+.donut-card-container .delete {
+    color: #f34621;
+}

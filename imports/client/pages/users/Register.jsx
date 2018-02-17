@@ -26,30 +26,28 @@ class Register extends React.Component {
 
     render() {
         return (
-            <main>
-              <div className='flex-container users-container align-center'>
-                <div className='users-form-wrapper'>
-                  <h1 className='title'>donut</h1>
+          <main className='flex-container users-container align-center'>
+            <div className='users-form-wrapper'>
+              <h1 className='title'>donut</h1>
 
-                  <AutoForm schema={RegisterSchema} onSubmit={this.onSubmit}>
-                    <AutoField name="email" label={false} placeholder />
-                    <ErrorField name="email" className='error' />
+              <AutoForm schema={RegisterSchema} onSubmit={this.onSubmit}>
+                <AutoField name="email" label={false} placeholder />
+                <ErrorField name="email" className='error' />
 
-                    <AutoField name="password" type="password" label={false} placeholder />
-                    <ErrorField name="password" className='error' />
+                <AutoField name="password" type="password" label={false} placeholder />
+                <ErrorField name="password" className='error' />
 
-                    <AutoField name="confirm_password" type="password" label={false} placeholder />
-                    <ErrorField name="confirm_password" className='error' />
+                <AutoField name="confirm_password" type="password" label={false} placeholder />
+                <ErrorField name="confirm_password" className='error' />
 
-                    <div className='btn-holder'>
-                      <button className='btn btn-blue btn-full' type="submit">
-                        Register
-                      </button>
-                    </div>
-                  </AutoForm>
+                <div className='btn-holder'>
+                  <button className='btn btn-blue btn-full' type="submit">
+                    Register
+                  </button>
                 </div>
-              </div>
-            </main>
+              </AutoForm>
+            </div>
+          </main>
         )
     }
 }

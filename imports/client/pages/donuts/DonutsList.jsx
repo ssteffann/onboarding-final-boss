@@ -1,6 +1,21 @@
 import React from 'react';
 import {withTracker} from 'meteor/react-meteor-data';
 import {Donuts} from '/imports/db';
+import './style/donuts.css';
+
+import DonutCard from '../../components/donut-card/DonutCard.jsx';
+
+const sortByPrice = (donutA, donutB) => {
+  if (donutA.price > donutB.price) {
+    return -1;
+  }
+
+  if (donutA.price < donutB.price) {
+    return 1;
+  }
+
+  return 0
+};
 
 class DonutsList extends React.Component {
     constructor() {
@@ -21,6 +36,18 @@ class DonutsList extends React.Component {
         Meteor.call('donut.remove', _id);
     };
 
+    renderDonutsList = (donuts, square) => {
+      return donuts.map((donut) => {
+        return (<DonutCard
+          donut={donut}
+          onEdit={this.editDonut}
+          onRemove={this.removeDonut}
+          squareCard={square}
+          key={donut._id}
+        />);
+      });
+    };
+
     render() {
         const {isLoading, donuts} = this.props;
 
@@ -28,25 +55,24 @@ class DonutsList extends React.Component {
             return <div>Loading...</div>
         }
 
+        const topDonuts = donuts.sort(sortByPrice).slice(0, 3);
+
+        console.log('topDonuts ------>', topDonuts, donuts.sort(sortByPrice))
+
+
         return (
-            <div>
-                {
-                    donuts.map(donut => {
-                        return (
-                            <div key={donut._id}>
-                                <p>Name: {donut.name}</p>
-                                <p>Price: {donut.price}</p>
-                                <p>Is Comestible? : {donut.isComestible ? 'Yes' : 'No'}</p>
-                                {this.isDonutOwner(donut) &&
-                                <a href="" onClick={() => this.editDonut(donut._id)}>Edit</a>}
-                                {this.isDonutOwner(donut) &&
-                                <a href="" onClick={() => this.removeDonut(donut._id)}>Remove</a>}
-                            </div>
-                        )
-                    })
-                }
+          <div className='flex-container'>
+            <div className='donuts-container clearfix'>
+              {this.renderDonutsList(donuts)}
+
+              <div className='flex-container'>
+                {this.renderDonutsList(topDonuts, true)}
+              </div>
+              <div>
                 <a href="" onClick={() => FlowRouter.go('donuts.create')}>Create a donut</a>
+              </div>
             </div>
+          </div>
         )
     }
 }

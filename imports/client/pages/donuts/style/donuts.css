@@ -1,0 +1,9 @@
+.donuts-container {
+    width: 70%;
+}
+
+.donuts-container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
