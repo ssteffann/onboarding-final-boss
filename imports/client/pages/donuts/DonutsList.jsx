@@ -1,6 +1,11 @@
 import React from 'react';
 import {withTracker} from 'meteor/react-meteor-data';
 import {Donuts} from '/imports/db';
+import './style/donuts.css';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import DonutCard from '../../components/donut-card/DonutCard.jsx';
+import { sortByPrice } from './helpers.js';
+
 
 class DonutsList extends React.Component {
     constructor() {
@@ -21,32 +26,48 @@ class DonutsList extends React.Component {
         Meteor.call('donut.remove', _id);
     };
 
+    renderDonutsList = (donuts, square) => {
+      return donuts.map((donut) => {
+        return (<div key={donut._id} className='flex-item'><DonutCard
+          donut={donut}
+          onEdit={this.editDonut}
+          onRemove={this.removeDonut}
+          squareCard={square}
+          isOwner={this.isDonutOwner(donut)}
+        /></div>);
+      });
+    };
+
     render() {
         const {isLoading, donuts} = this.props;
 
         if (isLoading) {
-            return <div>Loading...</div>
+            return <div className='flex-container align-center'>Loading...</div>
         }
 
+        // Top 3 donuts sorted by price
+        const topDonuts = donuts.sort(sortByPrice).slice(0, 3);
+
         return (
-            <div>
-                {
-                    donuts.map(donut => {
-                        return (
-                            <div key={donut._id}>
-                                <p>Name: {donut.name}</p>
-                                <p>Price: {donut.price}</p>
-                                <p>Is Comestible? : {donut.isComestible ? 'Yes' : 'No'}</p>
-                                {this.isDonutOwner(donut) &&
-                                <a href="" onClick={() => this.editDonut(donut._id)}>Edit</a>}
-                                {this.isDonutOwner(donut) &&
-                                <a href="" onClick={() => this.removeDonut(donut._id)}>Remove</a>}
-                            </div>
-                        )
-                    })
-                }
-                <a href="" onClick={() => FlowRouter.go('donuts.create')}>Create a donut</a>
+          <div className='flex-container'>
+            <div className='donuts-container'>
+              <div className='btn-holder'>
+                <button
+                  type='button'
+                  className='btn btn-pink'
+                  onClick={() => FlowRouter.go('donuts.create')}
+                >
+                  {'Create a donut'} <FontAwesomeIcon icon='plus-circle' />
+                </button>
+              </div>
+
+              {this.renderDonutsList(donuts)}
+
+              <div className='flex-container flex-row flex-wrap'>
+                {this.renderDonutsList(topDonuts, true)}
+              </div>
             </div>
+          </div>
         )
     }
 }

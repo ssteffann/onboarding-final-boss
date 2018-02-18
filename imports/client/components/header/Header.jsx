@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style/header.css';
 
-const Header = ({ isLoggedIn }) => {
-  return (<div className='flex-container header-container'>
+const Header = ({ isLoggedIn }) =>
+  (<div className='flex-container header-container'>
     <div className='header-wrapper'>
       <div className='flex-container justify-space-between'>
         <div className='logo'><a href='/'>donut <span className='trademark'>TM</span></a></div>
@@ -18,7 +18,6 @@ const Header = ({ isLoggedIn }) => {
       </div>
     </div>
   </div>);
-};
 
 Header.propsTypes = {
   isLoggedIn: PropTypes.bool,

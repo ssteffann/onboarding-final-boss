@@ -16,6 +16,13 @@ main {
     height: calc(100% - 50px);
 }
 
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
 /*Flex*/
 
 .flex-container {
@@ -25,6 +32,15 @@ main {
     justify-content: center;
     align-items: center;
 }
+
+.flex-column {
+    flex-direction: column !important;
+}
+
+.flex-row {
+    flex-direction: row !important;
+}
+
 
 .justify-space-between {
     justify-content: space-between;

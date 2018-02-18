@@ -22,27 +22,25 @@ class Login extends React.Component {
 
     render() {
         return (
-            <main className="cc-main">
-              <div className='flex-container users-container align-center'>
-                <div className='users-form-wrapper'>
-                  <h1 className='title'>donut</h1>
+          <main className="cc-main flex-container users-container align-center">
+            <div className='users-form-wrapper'>
+              <h1 className='title'>donut</h1>
 
-                  <AutoForm schema={LoginSchema} onSubmit={this.onSubmit}>
-                    <AutoField name="email" label={false} placeholder />
-                    <ErrorField name="email" className='error' />
+              <AutoForm schema={LoginSchema} onSubmit={this.onSubmit}>
+                <AutoField name="email" label={false} placeholder />
+                <ErrorField name="email" className='error' />
 
-                    <AutoField name="password" type="password" label={false} placeholder />
-                    <ErrorField name="password" className='error' />
+                <AutoField name="password" type="password" label={false} placeholder />
+                <ErrorField name="password" className='error' />
 
-                    <div className='btn-holder'>
-                      <button className='btn btn-blue btn-full' type="submit">
-                        Login
-                      </button>
-                    </div>
-                  </AutoForm>
+                <div className='btn-holder'>
+                  <button className='btn btn-blue btn-full' type="submit">
+                    Login
+                  </button>
                 </div>
-              </div>
-            </main>
+              </AutoForm>
+            </div>
+          </main>
         )
     }
 }
