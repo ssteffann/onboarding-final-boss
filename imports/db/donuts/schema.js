@@ -6,18 +6,19 @@ const DonutsSchema = new SimpleSchema({
     },
     isComestible: {
         type: Boolean,
-        optional: true
+        optional: true,
     },
-
+    image: {
+      type: String,
+      optional: true,
+    },
     price: {
         type: Number
     },
-
     createdAt: {
         type: Date,
         optional: true
     },
-
     userId: {
         type: String,
         optional: true

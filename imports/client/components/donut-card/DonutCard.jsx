@@ -7,7 +7,7 @@ import moment from 'moment';
 const DonutCard = ({ donut, squareCard, onEdit, onRemove, isOwner }) => {
   return (<div className={`flex-container donut-card-container ${ squareCard ? 'square-card' : '' }`}>
     <div className='donut-img'>
-      <img src='assets/donut_1.png' />
+      <img src={donut.image || 'assets/donut_1.png'} />
     </div>
 
     <div className='donut-info'>
@@ -16,7 +16,12 @@ const DonutCard = ({ donut, squareCard, onEdit, onRemove, isOwner }) => {
     </div>
 
     <div className='flex-container flex-row'>
-      {donut.isComestible && <div className='price'>{donut.price} <FontAwesomeIcon icon='dollar-sign' /></div>}
+      {!donut.isComestible &&
+        <a href='' className='delete' title={'Not comestible!'}>
+          <FontAwesomeIcon icon='hand-paper' />
+        </a>
+      }
+      <div className='price'>{donut.price} <FontAwesomeIcon icon='dollar-sign' size={'sm'} /></div>
 
       {isOwner && <div>
         <a className='edit' href='' onClick={() => onEdit(donut._id)}>
