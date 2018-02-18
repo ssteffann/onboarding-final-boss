@@ -4,8 +4,8 @@ import './style/donut-card.css';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import moment from 'moment';
 
-const DonutCard = ({ donut, squareCard, onEdit, onRemove }) => {
-  return (<div className={`flex-container donut-card-container ${ squareCard ? 'flex-column' : '' } clearfix`}>
+const DonutCard = ({ donut, squareCard, onEdit, onRemove, isOwner }) => {
+  return (<div className={`flex-container donut-card-container ${ squareCard ? 'square-card' : '' }`}>
     <div className='donut-img'>
       <img src='assets/donut_1.png' />
     </div>
@@ -16,15 +16,18 @@ const DonutCard = ({ donut, squareCard, onEdit, onRemove }) => {
     </div>
 
     <div className='flex-container flex-row'>
-      <div className='price'>{donut.price} <FontAwesomeIcon icon='dollar-sign' /></div>
+      {donut.isComestible && <div className='price'>{donut.price} <FontAwesomeIcon icon='dollar-sign' /></div>}
 
-      {onEdit && <div className='edit'>
-        <a onClick={() => onEdit(donut._id)}><FontAwesomeIcon icon='pencil-alt' /></a>
-      </div>}
+      {isOwner && <div>
+        <a className='edit' href='' onClick={() => onEdit(donut._id)}>
+          <FontAwesomeIcon icon='pencil-alt' />
+        </a>
 
-      {onRemove && <div className='delete'>
-        <a onClick={() => onRemove(donut._id)}><FontAwesomeIcon icon='trash-alt' /></a>
-      </div>}
+        <a href='' className='delete' onClick={() => onRemove(donut._id)}>
+          <FontAwesomeIcon icon='trash-alt' />
+        </a>
+      </div>
+      }
     </div>
 
   </div>);
@@ -32,9 +35,15 @@ const DonutCard = ({ donut, squareCard, onEdit, onRemove }) => {
 
 DonutCard.propsTypes = {
   squareCard: PropTypes.bool,
+  isOwner: PropTypes.bool,
   donut: PropTypes.any,
   onEdit: PropTypes.func,
   onRemove: PropTypes.func,
+};
+
+DonutCard.defaultProps= {
+  onEdit() {},
+  onRemove() {},
 };
 
 export default DonutCard;
