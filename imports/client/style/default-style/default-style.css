@@ -6,6 +6,7 @@ html, body {
     background-color: #f7f6f6;
     height: 100%;
     font-size: 16px;
+    font-family: 'Roboto', sans-serif;
 }
 
 #react-root {
@@ -98,6 +99,7 @@ input::placeholder {
     border: none;
     border-radius: 4px;
     display: inline-block;
+    cursor: pointer;
 }
 
 .btn-full {

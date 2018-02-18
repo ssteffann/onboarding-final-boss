@@ -1,0 +1,13 @@
+.donut-action-container {
+    background-color: #bd8cbf;
+}
+
+.donut-action-wrapper {
+    width: 360px;
+}
+
+@media all and (max-width: 640px) {
+    .donut-action-wrapper {
+        width: 95%;
+    }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
-import {AutoForm, AutoField, ErrorField} from 'uniforms-unstyled';
-import DonutsSchema from '/imports/db/donuts/schema';
+import DonutForm from '../../components/donut-form/DonutForm.jsx';
+
+import './style/donut-action.css';
 
 export default class DonutsEdit extends React.Component {
     constructor() {
@@ -21,7 +22,6 @@ export default class DonutsEdit extends React.Component {
         })
     }
 
-
     onSubmit = (data) => {
         Meteor.call('donut.edit', this.donutId, data, (err) => {
             if (!err) {
@@ -32,25 +32,22 @@ export default class DonutsEdit extends React.Component {
 
     render() {
         const {loading, donut} = this.state;
+
         if (loading) {
             return <div>Loading...</div>
         }
+
         return (
-            <main>
-                <AutoForm schema={DonutsSchema} onSubmit={this.onSubmit} model={donut}>
-                    <AutoField name="name"/>
-                    <ErrorField name="name"/>
-
-                    <AutoField name="price"/>
-                    <ErrorField name="price"/>
-
-                    <AutoField name="isComestible"/>
-                    <ErrorField name="isComestible"/>
-
-                    <button type="submit">
-                        Edit donut
-                    </button>
-                </AutoForm>
+            <main className='donut-action-container flex-container align-center'>
+              <div className='donut-action-wrapper'>
+                <DonutForm
+                  title={'Edit a donut'}
+                  subtitle={'doesn\'t take to long'}
+                  onSubmit={this.onSubmit}
+                  model={donut}
+                  submitLabel={'Save donut'}
+                />
+              </div>
             </main>
         )
     }

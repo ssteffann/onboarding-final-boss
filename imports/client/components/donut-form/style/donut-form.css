@@ -1,0 +1,48 @@
+.donut-form-container {
+    background-color: #440e62;
+    border-radius: 25px;
+    padding: 35px;
+    color: #ffffff;
+}
+
+.donut-form-container .images-container input {
+    display: none;
+}
+
+.donut-form-container .image {
+    width: 80px;
+    cursor: pointer;
+}
+
+.donut-form-container .image.selected {
+    border: 2px solid #bd8cbf;
+    border-radius: 50%;
+    padding: 1px;
+}
+
+.donut-form-container .title, .subtitle {
+    text-align: center;
+}
+
+.donut-form-container .title {
+    margin: 0 0 5px;
+}
+
+.donut-form-container .subtitle {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.donut-form-container .margin-wrapper {
+    margin: 20px 5px;
+}
+
+.donut-form-container .radio input {
+    width: auto;
+    margin-right: 10px;
+}
+
+.donut-form-container .radio div {
+    display: inline-block;
+    width: 50%;
+}

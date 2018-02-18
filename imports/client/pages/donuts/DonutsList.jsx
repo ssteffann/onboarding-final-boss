@@ -1,7 +1,7 @@
 import React from 'react';
 import {withTracker} from 'meteor/react-meteor-data';
 import {Donuts} from '/imports/db';
-import './style/donuts.css';
+import './style/donuts-list.css';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import DonutCard from '../../components/donut-card/DonutCard.jsx';
 import { sortByPrice } from './helpers.js';
@@ -50,7 +50,7 @@ class DonutsList extends React.Component {
 
         return (
           <div className='flex-container'>
-            <div className='donuts-container'>
+            <div className='donuts-lists-container'>
               <div className='btn-holder'>
                 <button
                   type='button'
