@@ -25,10 +25,12 @@ class DonutForm extends React.Component {
   componentDidMount() {
     const { model = {} } = this.props;
 
-    this.onImageChange(model.image);
+    this.onImageChange('image', model.image);
   }
 
-  onImageChange = (value) => {
+  onImageChange = (key, value) => {
+    if (key !== 'image') { return }
+
     this.setState({ selectedImg: value });
   };
 
@@ -39,7 +41,7 @@ class DonutForm extends React.Component {
       <h1 className='title'>{title}</h1>
       <div className='subtitle'>{subtitle}</div>
 
-      <AutoForm schema={DonutsSchema} onSubmit={onSubmit} model={model}>
+      <AutoForm schema={DonutsSchema} onSubmit={onSubmit} model={model} onChange={this.onImageChange}>
 
         <div className='margin-wrapper'>
           <p>{'Select a donut!'}</p>
@@ -47,7 +49,6 @@ class DonutForm extends React.Component {
           <RadioField
             name="image"
             label={false}
-            onChange={this.onImageChange}
             allowedValues={images}
             className='images-container flex-container flex-row justify-space-between'
             transform={(value) => <DonutImg imgSrc={value} isSelected={this.state.selectedImg === value} />}

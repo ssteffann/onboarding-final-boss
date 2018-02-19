@@ -10,7 +10,6 @@ const DonutsSchema = new SimpleSchema({
     },
     image: {
       type: String,
-      optional: true,
     },
     price: {
         type: Number
