@@ -34,7 +34,7 @@ export default class DonutsEdit extends React.Component {
         const {loading, donut} = this.state;
 
         if (loading) {
-            return <div>Loading...</div>
+            return <div className='donut-action-wrapper'>Loading...</div>;
         }
 
         return (

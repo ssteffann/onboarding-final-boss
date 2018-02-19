@@ -52,7 +52,7 @@ class DonutForm extends React.Component {
             className='images-container flex-container flex-row justify-space-between'
             transform={(value) => <DonutImg imgSrc={value} isSelected={this.state.selectedImg === value} />}
           />
-          <ErrorField name="image" />
+          <ErrorField className='error' name="image" />
         </div>
 
         <div className='margin-wrapper'>
@@ -65,14 +65,14 @@ class DonutForm extends React.Component {
             checkboxes={true}
             transform={(value) => value ? 'Yes' : 'No'}
           />
-          <ErrorField name="isComestible" />
+          <ErrorField className='error' name="isComestible" />
         </div>
 
         <AutoField name="name" label={false} placeholder />
-        <ErrorField name="name"/>
+        <ErrorField className='error' name="name"/>
 
         <AutoField name="price" label={false} placeholder />
-        <ErrorField name="price"/>
+        <ErrorField className='error' name="price"/>
 
         <div className='margin-wrapper'>
           <button className='btn btn-full btn-pink' type="submit">

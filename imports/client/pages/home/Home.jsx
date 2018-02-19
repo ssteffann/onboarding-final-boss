@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import './style/home.css';
 
 import InfoCard from '../../components/info-card/InfoCard.jsx';
@@ -34,6 +33,7 @@ class Home extends Component {
             imgUrl='assets/home_bg.png'
             title={bannerInfo.title}
             text={bannerInfo.text}
+            clickAction={() => FlowRouter.go('donuts.list')}
           />
         </div>
         <div className='flex-container align-stretch home-info-container'>
@@ -43,8 +43,5 @@ class Home extends Component {
     )
   }
 }
-
-Home.propTypes = {};
-Home.defaultProps = {};
 
 export default Home;

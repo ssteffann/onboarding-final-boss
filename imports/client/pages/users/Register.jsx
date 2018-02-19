@@ -28,7 +28,7 @@ class Register extends React.Component {
         return (
           <main className='flex-container users-container align-center'>
             <div className='users-form-wrapper'>
-              <h1 className='title'>donut</h1>
+              <h1 className='title'>Register</h1>
 
               <AutoForm schema={RegisterSchema} onSubmit={this.onSubmit}>
                 <AutoField name="email" label={false} placeholder />

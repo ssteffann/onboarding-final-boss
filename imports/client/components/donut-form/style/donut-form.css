@@ -14,6 +14,10 @@
     cursor: pointer;
 }
 
+.donut-form-container .error {
+   color: #f26d7d;
+}
+
 .donut-form-container .image.selected {
     border: 2px solid #bd8cbf;
     border-radius: 50%;

@@ -76,7 +76,7 @@ export default withTracker(() => {
     const handle = Meteor.subscribe('donuts');
 
     return {
-        loading: !handle.ready(),
+        isLoading: !handle.ready(),
         donuts: Donuts.find().fetch()
     }
 })(DonutsList);

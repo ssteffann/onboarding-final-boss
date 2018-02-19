@@ -1,0 +1,42 @@
+.notifications-container {
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+}
+
+.notifications-container .notifications-holder {
+    position: absolute;
+    top: 50px;
+    right: -50px;
+    width: 250px;
+    font-size: 14px;
+}
+
+.notifications-container .notifications-holder .error, .success, .warning{
+    border: 1px solid #ffffff ;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.notifications-container .notifications-holder .error {
+    background-color: #f26d7d;
+    box-shadow:  0px 5px 35px 5px #f26d7d;
+}
+
+.notifications-container .notifications-holder .success {
+    background-color: #5cb85c;
+    box-shadow:  0px 5px 35px 5px #5cb85c;
+}
+
+.notifications-container .notifications-holder .warning {
+    background-color: #fbaf5d;
+    box-shadow:  0px 5px 35px 5px #fbaf5d;
+}
+
+@media all and (max-width: 640px) {
+    .notifications-container .notifications-holder {
+        right: -125px;
+    }
+}

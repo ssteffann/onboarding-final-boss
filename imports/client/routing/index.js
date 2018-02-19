@@ -20,13 +20,13 @@ route('/login', Login, {}, {
 route('/register', Register, {}, {
     name: 'register'
 });
-route('/donuts', DonutsList, {}, {
+route('/donuts', DonutsList, { secured: true }, {
     name: 'donuts.list'
 });
-route('/donuts/create', DonutsCreate, {}, {
+route('/donuts/create', DonutsCreate, { secured: true }, {
     name: 'donuts.create'
 });
-route('/donuts/edit/:_id', DonutsEdit, {}, {
+route('/donuts/edit/:_id', DonutsEdit, { secured: true }, {
     name: 'donuts.edit'
 });
 

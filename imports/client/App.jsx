@@ -7,16 +7,30 @@ export default class App extends React.Component {
         super();
     }
 
+    checkRoute(routeProps) {
+      if (routeProps.secured && !Meteor.userId()) {
+        return FlowRouter.go('login');
+      }
+    }
+
+    componentDidMount() {
+      this.checkRoute(this.props.routeProps);
+    }
+
+    componentWillReceiveProps(props) {
+      this.checkRoute(props.routeProps);
+    }
+
     render() {
         const {main, routeProps} = this.props;
-        const headerProps = {
-          isLoggedIn: !!Meteor.userId(),
-          key: 'header'
+        const mainProps = {
+          routeProps: routeProps,
+          key: 'main'
         };
 
         return [
-            React.createElement(Header, headerProps),
-            React.createElement(main, {routeProps: routeProps, key: 'main'})
+            React.createElement(Header, { key: 'header' }),
+            React.createElement(main, mainProps)
         ]
     }
 }

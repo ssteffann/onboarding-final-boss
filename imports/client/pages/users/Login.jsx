@@ -24,7 +24,7 @@ class Login extends React.Component {
         return (
           <main className="cc-main flex-container users-container align-center">
             <div className='users-form-wrapper'>
-              <h1 className='title'>donut</h1>
+              <h1 className='title'>login</h1>
 
               <AutoForm schema={LoginSchema} onSubmit={this.onSubmit}>
                 <AutoField name="email" label={false} placeholder />
